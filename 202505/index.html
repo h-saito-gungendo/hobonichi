@@ -1,0 +1,43 @@
+<!doctype html><html lang="ja"><head>
+    <meta charset="utf-8">
+    <!-- ---------- GA4タグ（同期版） ---------- -->
+    <script src="https://www.googletagmanager.com/gtag/js?id=G-QYWMG5G712"></script>
+    <script>
+      window.dataLayer = window.dataLayer||[];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+    
+      /* ① page_view を送り、送信後にコールバックで遷移 */
+      gtag('config', 'G-QYWMG5G712', {
+        send_page_view: true,
+        event_callback: () => jump()
+      });
+    
+      /* ② Measurement Protocol もバックアップ送信 */
+      fetch('https://www.google-analytics.com/mp/collect?measurement_id=G-QYWMG5G712&api_secret=OzvRR9OWQd69ZxTUFJFyKA',{
+        method:'POST', keepalive:true,
+        body:JSON.stringify({
+          client_id:crypto.randomUUID(),
+          events:[{name:'click_redirect',params:{campaign:'r7_supplement_202504',source:'email',medium:'sales',content:'hobonichi_youtube_to_municipality'}}]
+        })
+      });
+    
+      /* ③ 1.5秒経っても callback 来ない場合のフォールバック */
+      setTimeout(jump,1500);
+    
+      function jump(){
+        window.location.href='https://www.youtube.com/watch?v=GJKuDaL9r84';
+      }
+    </script>
+    
+    <!-- JS 無効環境向け -->
+    <noscript>
+    <meta http-equiv="refresh" content="2;url=https://www.youtube.com/watch?v=GJKuDaL9r84">
+    </noscript>
+    
+    <title>動画へ転送しています…</title>
+    <style>body{display:flex;height:100vh;align-items:center;justify-content:center;font-family:sans-serif;text-align:center}</style>
+    </head><body>
+    動画を読み込み中です。数秒お待ちください…
+    </body></html>
+    

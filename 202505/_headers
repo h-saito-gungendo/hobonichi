@@ -1,0 +1,2 @@
+/r7april/*
+  Content-Security-Policy: script-src 'self' https://www.googletagmanager.com https://www.google-analytics.com
