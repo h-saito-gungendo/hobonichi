@@ -8,9 +8,11 @@
       gtag('js', new Date());
     
       /* ① page_view を送り、送信後にコールバックで遷移 */
-      gtag('config', 'G-QYWMG5G712', {
+      gtag('config', 'G-M5FHJ3J8GH', {
         send_page_view: true,
-        event_callback: () => jump()
+        event_callback: () => {
+          setTimeout(jump, 200)
+        }
       });
     
       /* ② Measurement Protocol もバックアップ送信 */
@@ -18,12 +20,12 @@
         method:'POST', keepalive:true,
         body:JSON.stringify({
           client_id:crypto.randomUUID(),
-          events:[{name:'click_redirect',params:{campaign:'r7_supplement_202504',source:'email',medium:'sales',content:'hobonichi_youtube_to_municipality'}}]
+          events:[{name:'click_redirect',params:{campaign:'r7_supplement_202505',source:'email',medium:'sales',content:'hobonichi_youtube_to_municipality'}}]
         })
       });
     
       /* ③ 1.5秒経っても callback 来ない場合のフォールバック */
-      setTimeout(jump,1500);
+      setTimeout(jump,2000);
     
       function jump(){
         window.location.href='https://www.youtube.com/watch?v=GJKuDaL9r84';
