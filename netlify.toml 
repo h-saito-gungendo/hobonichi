@@ -4,3 +4,8 @@
 
 [functions]
   directory = "netlify/functions"  # 関数ファイル配置ディレクトリ
+
+[[redirects]]
+  from = "/r/:slug"
+  to   = "/.netlify/functions/logAndRedirect?slug=:slug"
+  status = 200         # プロキシ転送（隠蔽）
