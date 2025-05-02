@@ -1,5 +1,3 @@
-const fetch = require('node-fetch'); // Node.js 18未満なら必要
-
 exports.handler = async (event, context) => {
   const target = event.queryStringParameters?.target;
   const campaign = event.queryStringParameters?.campaign || 'default_campaign';
@@ -17,7 +15,7 @@ exports.handler = async (event, context) => {
 
   console.log('[ClickLog]', { time: now, ip, ua, target, campaign });
 
-  // ① Measurement Protocol 送信
+  // ① Measurement Protocol（fetchはNode18+ではビルトインなのでOK）
   try {
     const response = await fetch(
       `https://www.google-analytics.com/mp/collect?measurement_id=${process.env.GA_MEASUREMENT_ID}&api_secret=${process.env.GA_API_SECRET}`,
