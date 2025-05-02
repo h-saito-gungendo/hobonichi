@@ -1,0 +1,11 @@
+[build]
+  publish = "public"
+  command = ""             # ← ビルド不要なら空
+
+[functions]
+  directory = "netlify/functions"
+
+[[redirects]]
+  from = "/r/:slug"
+  to   = "/.netlify/functions/logAndRedirect?slug=:slug"
+  status = 200
