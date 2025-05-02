@@ -2,6 +2,8 @@ exports.handler = async (event) => {
   // ① slug を取得
   const slug = event.queryStringParameters?.slug;
 
+  console.log('slug =', slug);
+
   // ② slug から target / campaign を決定
   const MAP = {
     hobo: {
