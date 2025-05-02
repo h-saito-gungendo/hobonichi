@@ -1,11 +1,12 @@
 [build]
   publish = "public"
-  command = ""             # ← ビルド不要なら空
+- command = "npm run build"
++ command = ""       # ← 空文字なら「ビルド不要」と認識されます
 
 [functions]
   directory = "netlify/functions"
 
 [[redirects]]
-  from = "/r/:slug"
-  to   = "/.netlify/functions/logAndRedirect?slug=:slug"
+  from   = "/r/:slug"
+  to     = "/.netlify/functions/logAndRedirect?slug=:slug"
   status = 200
