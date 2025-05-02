@@ -8,4 +8,4 @@
 [[redirects]]
   from   = "/r/:slug"
   to     = "/.netlify/functions/logAndRedirect?slug=:slug"
-  status = 200
+  status = 302
