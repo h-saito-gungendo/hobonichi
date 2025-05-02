@@ -1,8 +1,7 @@
 [build]
   publish = "public"
-- command = "npm run build"
-+ command = ""       # ← 空文字なら「ビルド不要」と認識されます
-
+  command = ""       
+      
 [functions]
   directory = "netlify/functions"
 
