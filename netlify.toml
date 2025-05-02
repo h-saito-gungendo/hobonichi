@@ -1,7 +1,7 @@
 [build]
-  publish = "public"
-  command = ""       
-      
+  publish = "."       # ← 1 行だけ残す
+  command = ""
+
 [functions]
   directory = "netlify/functions"
 
