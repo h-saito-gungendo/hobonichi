@@ -1,0 +1,6 @@
+[build]
+  publish = "public"          # 静的サイトの公開ディレクトリ
+  command = "npm run build"   # ビルドコマンド（不要なら空欄可）
+
+[functions]
+  directory = "netlify/functions"  # 関数ファイル配置ディレクトリ
