@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <title>動画へ転送しています…</title>
+  <style>
+    body {
+      display: flex;
+      height: 100vh;
+      align-items: center;
+      justify-content: center;
+      font-family: sans-serif;
+      text-align: center;
+    }
+  </style>
+
+  <!-- ✅ GA4タグ（測定ID済） -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-M5FHJ3J8GH"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){ dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-M5FHJ3J8GH');  // ← あなたの測定ID
+  </script>
+
+  <!-- ✅ 自動リダイレクト先（YouTube） -->
+  <script>
+    const redirectUrl = "https://www.youtube.com/watch?v=GJKuDaL9r84";
+    setTimeout(() => {
+      window.location.href = redirectUrl;
+    }, 1500);  // 1.5秒後にリダイレクト
+  </script>
+</head>
+<body>
+  動画を読み込み中です。数秒お待ちください…
+</body>
+</html>

@@ -1,5 +1,5 @@
 [build]
-  publish = "."       # ← 1 行だけ残す
+  publish = "."       
   command = ""
 
 [functions]
@@ -9,3 +9,4 @@
   from   = "/r/:slug"
   to     = "/.netlify/functions/logAndRedirect?slug=:slug"
   status = 302
+  
